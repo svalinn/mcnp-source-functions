@@ -83,6 +83,7 @@ void convert_rad_to_rz_(const double *major_radius, const double *minor_radius,
  * convert partial cylindrical coords to xyz
  */
 void convert_rz_to_xyz_(const double *r, const double *rn_store, 
-		       double &x, double &y, double &toroidal_angle);
+                        double &x, double &y, const double *min_toroidal_angle,
+                        const double* max_toroidal_angle, double &toroidal_angle);
 
 }

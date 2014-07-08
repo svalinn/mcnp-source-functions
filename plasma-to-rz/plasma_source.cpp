@@ -109,10 +109,11 @@ void convert_rad_to_rz_(const double *major_radius, const double *minor_radius,
  * convert rz_to_xyz
  */
 void convert_rz_to_xyz_(const double *r, const double *rn_store, 
-		       double &x, double &y, double &toroidal_angle)
+                        double &x, double &y, const double *min_toroidal_angle,
+                        const double* max_toroidal_angle, double &toroidal_angle)
 {
-  const double twopi = 6.28318530718;
-  toroidal_angle = twopi*(*rn_store);
+  double toroidal_extent = (*max_toroidal_angle)-(*min_toroidal_angle);
+  toroidal_angle = toroidal_extent*(*rn_store)+(*min_toroidal_angle);
   x = *r*sin(toroidal_angle);
   y = *r*cos(toroidal_angle);
   return;
