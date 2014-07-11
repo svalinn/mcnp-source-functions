@@ -50,7 +50,7 @@ subroutine source
   call convert_rad_to_rz(rdum(11),rdum(10),rdum(12),rdum(13),rdum(14), &
                          radial_sample,rang(),r,z)
   ! convert to xyz
-  call convert_rz_to_xyz(r,rang(),xxx,yyy,angle)
+  call convert_rz_to_xyz(r,rang(),xxx,yyy,rdum(15),rdum(16),angle)
   xxx=100.*xxx
   yyy=100.*yyy
   zzz=100.*z
